@@ -1,4 +1,4 @@
-import 'package:feature_based/feature/feature_1/view/screen_1.dart';
+import 'package:cred_assignment/feature/home/view/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -6,7 +6,7 @@ class AppRouter {
     GoRoute(
       path: '/',
       builder: (context, state) {
-        return const Screen1();
+        return const HomeScreen();
       },
     )
   ]);

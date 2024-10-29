@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:feature_based/core/utils/dimension_extension.dart';
+import 'package:cred_assignment/core/utils/dimension_extension.dart';
 import 'package:flutter/material.dart';
 
 class AppDimensionsTheme extends ThemeExtension<AppDimensionsTheme> {

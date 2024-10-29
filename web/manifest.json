@@ -1,6 +1,6 @@
 {
-    "name": "feature_based",
-    "short_name": "feature_based",
+    "name": "cred_assignment",
+    "short_name": "cred_assignment",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

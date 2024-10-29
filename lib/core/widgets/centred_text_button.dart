@@ -8,7 +8,10 @@ class CenteredTextButton extends StatelessWidget {
   final Color color;
   final double? height;
   final double? width;
-  final double? radius;
+  final double? topRightradius;
+  final double? bottomLeftradius;
+  final double? bottomRightradius;
+  final double? topLeftradius;
 
   const CenteredTextButton._internal(
       {super.key,
@@ -16,7 +19,10 @@ class CenteredTextButton extends StatelessWidget {
       required this.onTap,
       required this.color,
       this.height,
-      this.radius,
+      this.topLeftradius,
+      this.bottomLeftradius,
+      this.topRightradius,
+      this.bottomRightradius,
       this.width});
 
   factory CenteredTextButton.primary(
@@ -26,15 +32,21 @@ class CenteredTextButton extends StatelessWidget {
       required BuildContext context,
       double? height,
       double? width,
-      double? radius}) {
+      double? topRightradius,
+      double? bottomLeftradius,
+      double? bottomRightradius,
+      double? topLeftradius}) {
     return CenteredTextButton._internal(
       key: key,
       label: label,
       onTap: onTap,
-      color: AppColorsTheme.dark().bgInput,
+      color: AppColorsTheme.dark().button,
       height: height ?? 50,
       width: width ?? 300,
-      radius: radius ?? 7,
+      topLeftradius: topLeftradius ?? 10,
+      topRightradius: topRightradius ?? 10,
+      bottomLeftradius: bottomLeftradius ?? 10,
+      bottomRightradius: bottomRightradius ?? 10,
     );
   }
 
@@ -46,7 +58,13 @@ class CenteredTextButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(radius ?? 7)),
+            color: color,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(topLeftradius ?? 10),
+              topRight: Radius.circular(topRightradius ?? 10),
+              bottomLeft: Radius.circular(bottomLeftradius ?? 10),
+              bottomRight: Radius.circular(bottomRightradius ?? 10),
+            )),
         child: Center(
           child: Text(
             label,
